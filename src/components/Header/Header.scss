@@ -1,0 +1,73 @@
+@use "../../styles/partials/index" as index;
+
+.header {
+  padding: 1rem;
+  text-align: center;
+
+  &__logo {
+    padding-bottom: 1rem;
+  }
+
+  &__search {
+    @include index.flexed(space-between);
+    gap: 1rem;
+    padding-bottom: 1rem;
+    width: 100%;
+  }
+
+  &__search-container {
+    @include index.flexed();
+    border: 1px solid index.$color-ui-secondary;
+    width: 100%;
+    background-color: index.$color-background-secondary;
+    border-radius: 0.25rem;
+
+    &:focus {
+      border: 2px solid index.$color-cta-primary;
+    }
+  }
+
+  &__search-icon {
+    padding-left: 1rem;
+  }
+
+  &__search-input {
+    border-style: none;
+    background-color: index.$color-background-secondary;
+    max-width: 15rem;
+    width: 100%;
+    height: 2.25rem;
+    padding: 0.75rem;
+    margin-right: auto;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: index.$color-text-primary;
+      opacity: 1;
+    }
+  }
+
+  &__avatar {
+    border-radius: 50%;
+    width: 2.25rem;
+    height: 2.25rem;
+    object-fit: cover;
+  }
+
+  &__link {
+    @include index.flexed();
+    background-color: index.$color-cta-primary;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    height: 2.5rem;
+  }
+
+  &__button-text {
+    @include index.text(index.$color-cta-text);
+    width: 100%;
+    margin: 0;
+  }
+}
