@@ -22,10 +22,17 @@ const Header = () => {
             placeholder="Search"
           />
         </div>
+
+        <div className="header__button-tablet">
+          <a className="header__link" href="#">
+            <img src={uploadIcon} alt="Upload" />
+            <p className="header__button-text">UPLOAD</p>
+          </a>
+        </div>
         <img className="header__avatar" src={avatar} alt="Mohan Muruge" />
       </div>
 
-      <div className="header__button">
+      <div className="header__button-mobile">
         <a className="header__link" href="#">
           <img src={uploadIcon} alt="Upload" />
           <p className="header__button-text">UPLOAD</p>

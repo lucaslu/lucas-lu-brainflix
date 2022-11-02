@@ -1,5 +1,6 @@
 @use "../../styles/partials/index" as index;
 
+/* styles for header for mobile */
 .header {
   padding: 1rem;
   text-align: center;
@@ -34,7 +35,7 @@
   &__search-input {
     border-style: none;
     background-color: index.$color-background-secondary;
-    max-width: 15rem;
+    min-width: 15rem;
     width: 100%;
     height: 2.25rem;
     padding: 0.75rem;
@@ -63,11 +64,61 @@
     border-radius: 0.25rem;
     text-decoration: none;
     height: 2.5rem;
+
+    &:hover {
+      background-color: index.$color-cta-hover;
+    }
   }
 
   &__button-text {
     @include index.text(index.$color-cta-text);
     width: 100%;
     margin: 0;
+  }
+
+  &__button-tablet {
+    display: none;
+  }
+}
+
+/* styles for header on tablet device */
+@include index.medium {
+  .header {
+    @include index.flexed();
+    padding: 1.5rem;
+
+    &__search {
+      justify-content: flex-end;
+    }
+
+    &__search-container {
+      width: 50%;
+      max-width: 18.75rem;
+    }
+
+    &__avatar {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    &__link {
+      min-width: 9.375rem;
+    }
+
+    &__button-mobile {
+      display: none;
+    }
+
+    &__button-tablet {
+      display: block;
+    }
+  }
+}
+
+/* styles for header on desktop */
+@include index.large {
+  .header {
+    max-width: 80rem;
+    margin: 0 auto;
   }
 }
