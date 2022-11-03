@@ -1,7 +1,11 @@
 @use "../../styles/partials/index" as index;
 
 .video {
-  position: relative;
+  // position: relative;
+  &__container {
+    position: relative;
+    aspect-ratio: 16 / 9;
+  }
 
   &__hero {
     width: 100%;
@@ -12,7 +16,7 @@
   &__controls {
     @include index.flexed(space-around);
     position: absolute;
-    bottom: 1rem;
+    bottom: 0.5rem;
     right: 0.5rem;
     width: 100%;
   }
@@ -84,6 +88,11 @@
     justify-content: space-between;
     background-color: index.$color-ui-primary;
     padding: 0 1.5rem;
+
+    &__container {
+      width: 720px;
+      margin: 0 auto;
+    }
 
     &__controls {
       padding: 0 1.5rem;

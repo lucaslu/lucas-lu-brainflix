@@ -1,0 +1,57 @@
+@use "../../styles/partials/index" as index;
+
+.video-details {
+  padding: 0 1rem;
+
+  &__title {
+    @include index.text(index.$color-text-primary, 1.5rem, 2rem, 700);
+    margin: 0;
+    padding: 1.5rem 0 1rem;
+  }
+
+  &__divider {
+    color: index.$color-ui-secondary;
+    size: 1px;
+    margin: 0;
+    &--top {
+      margin-top: 1rem;
+    }
+  }
+
+  &__container {
+    @include index.flexed(space-between);
+  }
+
+  &__text {
+    @include index.text(index.$color-text-secondary);
+    margin: 0;
+    padding-top: 1rem;
+    // padding-left: 0.5rem;
+    padding-right: 2rem;
+
+    &--header {
+      font-weight: 700;
+      color: index.$color-text-primary;
+    }
+  }
+
+  &__view-container {
+    @include index.flexed();
+  }
+
+  &__icons {
+    padding-top: 1rem;
+    padding-right: 0.5rem;
+  }
+
+  &__description {
+    @include index.text(index.$color-text-primary);
+    margin: 0;
+    padding: 1rem 0;
+  }
+
+  &__comments {
+    @include index.text(index.$color-text-primary, 0.8125rem, null, 700);
+    margin: 0;
+  }
+}

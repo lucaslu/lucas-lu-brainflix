@@ -1,5 +1,4 @@
 const Comments = ({ comments }) => {
-  console.log(comments);
   return (
     <>
       {comments.map((comment) => (

@@ -21,11 +21,13 @@ const App = () => {
     setVideoDetails(getVideoDetails(videoIdClickedOn));
   };
 
+  // console.table("videos", videos);
+  // console.table("videoDetails", videoDetails);
   return (
     <>
       <Header />
       <main>
-        <Video />
+        <Video image={videoDetails.image} />
         <VideoDetails video={videoDetails} />
         <Comments comments={videoDetails.comments} />
       </main>
