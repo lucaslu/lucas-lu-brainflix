@@ -1,0 +1,15 @@
+@use "./styles/partials/index";
+
+html,
+body {
+  box-sizing: border-box;
+  font-family: "Avenir Next", Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
