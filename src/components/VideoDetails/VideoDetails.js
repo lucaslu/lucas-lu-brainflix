@@ -9,7 +9,7 @@ const VideoDetails = ({ video }) => {
   return (
     <section className="video-details">
       <h1 className="video-details__title">{title}</h1>
-      <hr className="video-details__divider" />
+      <hr className="video-details__divider video-details__divider--tablet" />
 
       <div className="video-details__container">
         <div className="video-details__left">

@@ -55,3 +55,58 @@
     margin: 0;
   }
 }
+
+/* styles for header on tablet device */
+@include index.medium {
+  .video-details {
+    padding: 0 1.5rem;
+
+    &__title {
+      @include index.text(null, 2.0625rem, 2.75rem, null);
+      padding: 2.25rem 0 1.5rem;
+    }
+
+    &__divider {
+      &--tablet {
+        display: none;
+      }
+    }
+
+    &__left {
+      display: flex;
+    }
+
+    &__right {
+      display: flex;
+    }
+
+    &__text {
+      @include index.text(null, 0.875rem, 1.375rem, null);
+      margin: 0;
+      padding: 0;
+      // padding-top: 1rem;
+      padding-right: 2rem;
+    }
+
+    &__icons {
+      padding-top: 0;
+      padding-right: 0.5rem;
+    }
+
+    &__description {
+      @include index.text(null, 0.875rem, 1.375rem, null);
+
+      padding: 1.5rem 0;
+    }
+
+    &__divider {
+      &--top {
+        margin-top: 1.5rem;
+      }
+    }
+
+    &__comments {
+      @include index.text(null, 0.875rem, 1.375rem, null);
+    }
+  }
+}
