@@ -6,6 +6,7 @@ import Header from "./components/Header/Header";
 import SideBar from "./components/SideBar/SideBar";
 import VideoDetails from "./components/VideoDetails/VideoDetails";
 import Comments from "./components/Comments/Comments";
+import Video from "./components/Video/Video";
 
 const App = () => {
   const [videoId, setVideoId] = useState(
@@ -20,11 +21,16 @@ const App = () => {
     setVideoDetails(getVideoDetails(videoIdClickedOn));
   };
 
+  // console.table("videos", videos);
+  // console.table("videoDetails", videoDetails);
   return (
     <>
       <Header />
-      <VideoDetails video={videoDetails} />
-      <Comments comments={videoDetails.comments} />
+      <main>
+        <Video image={videoDetails.image} />
+        <VideoDetails video={videoDetails} />
+        <Comments comments={videoDetails.comments} />
+      </main>
       <SideBar videos={videos} onClick={handleClick} />
     </>
   );

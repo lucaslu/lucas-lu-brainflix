@@ -1,0 +1,130 @@
+@use "../../styles/partials/index" as index;
+
+.video {
+  // position: relative;
+  &__container {
+    position: relative;
+    aspect-ratio: 16 / 9;
+  }
+
+  &__hero {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  &__controls {
+    @include index.flexed(space-around);
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    width: 100%;
+  }
+
+  &__button-play {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0.25rem;
+    border: none;
+    padding: 2px 8px;
+    margin-left: 1rem;
+  }
+
+  &__play-icon {
+    width: 10px;
+  }
+
+  &__progress {
+    @include index.flexed(flex-start);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0.25rem;
+    border: none;
+    width: 60%;
+    // padding: 2px 8px;
+  }
+
+  // https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-progress-bar
+  &__progress-bar {
+    -webkit-appearance: none;
+    height: 0.1875rem;
+    width: 90%;
+    padding: 0 0.5rem;
+
+    &::-webkit-progress-bar {
+      background-color: black;
+    }
+  }
+
+  &__time {
+    @include index.text(index.$color-cta-text, 0.625rem, 1.25rem);
+    padding-right: 5px;
+  }
+
+  &__size-volume {
+    @include index.flexed();
+  }
+
+  &__button-screen {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2px 8px;
+    border: none;
+    border-radius: 0.25rem 0 0 0.25rem;
+  }
+
+  &__button-volume {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2px 8px;
+    border: none;
+    border-radius: 0 0.25rem 0.25rem 0;
+  }
+
+  &__size-volume-button {
+    width: 15px;
+  }
+}
+
+/* styles for header on tablet device */
+@include index.medium {
+  .video {
+    justify-content: space-between;
+    background-color: index.$color-ui-primary;
+    padding: 0 1.5rem;
+
+    &__container {
+      width: 720px;
+      margin: 0 auto;
+    }
+
+    &__controls {
+      // padding: 0 1rem;
+      padding-bottom: 0.5rem;
+    }
+
+    &__button-play {
+      padding: 8px 15px;
+    }
+
+    &__play-icon {
+      width: 10px;
+    }
+
+    &__progress {
+      width: 75%;
+      padding: 5px 15px;
+    }
+
+    &__time {
+      padding-left: 5px;
+    }
+    &__button-screen {
+      padding: 5px 0 5px 10px;
+    }
+
+    &__button-volume {
+      padding: 5px 10px 5px 10px;
+    }
+
+    &__size-volume-button {
+      width: 20px;
+    }
+  }
+}
