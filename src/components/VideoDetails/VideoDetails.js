@@ -42,7 +42,7 @@ const VideoDetails = ({ video }) => {
 
       <p className="video-details__description">{description}</p>
 
-      <p className="video-details__comments">{comments.length} comments</p>
+      <p className="video-details__comments">{comments.length} Comments</p>
     </section>
   );
 };

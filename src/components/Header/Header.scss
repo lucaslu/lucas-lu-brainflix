@@ -35,6 +35,7 @@
   &__search-input {
     border-style: none;
     background-color: index.$color-background-secondary;
+    font-family: "Avenir Next", Arial, Helvetica, sans-serif;
     // min-width: 15rem;
     width: 85%;
     height: 2.25rem;
@@ -57,12 +58,13 @@
     object-fit: cover;
   }
 
-  &__link {
+  &__button {
     @include index.flexed();
     background-color: index.$color-cta-primary;
     border-radius: 0.25rem;
-    text-decoration: none;
+    border-style: none;
     height: 2.5rem;
+    width: 100%;
 
     &:hover {
       background-color: index.$color-cta-hover;
@@ -70,7 +72,7 @@
   }
 
   &__button-text {
-    @include index.text(index.$color-cta-text);
+    @include index.text(index.$color-cta-text, 0.75rem, 1.25rem, 700);
     width: 100%;
     margin: 0;
   }
