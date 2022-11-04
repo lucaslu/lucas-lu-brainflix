@@ -1,0 +1,36 @@
+@use "../../styles/partials/index" as index;
+
+.sidebar {
+  padding: 0 1rem;
+
+  &__title {
+    @include index.text(index.$color-text-secondary, 0.8125rem, 1.125rem, 700);
+    margin: 0;
+    padding-bottom: 1rem;
+  }
+
+  &__videos {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__image {
+    border-radius: 0.25rem;
+    width: 6rem;
+    height: 4rem;
+    aspect-ratio: 16 / 9;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+
+  &__name {
+    @include index.text(index.$color-text-primary, 0.8125rem, null, 700);
+    margin: 0;
+    padding-bottom: 0.5rem;
+  }
+
+  &__channel {
+    @include index.text(index.$color-text-primary);
+    margin: 0;
+  }
+}
