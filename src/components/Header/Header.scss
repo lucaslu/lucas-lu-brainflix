@@ -13,13 +13,13 @@
     @include index.flexed(space-between);
     gap: 1rem;
     padding-bottom: 1rem;
-    width: 100%;
+    width: 95%;
   }
 
   &__search-container {
     @include index.flexed();
     border: 1px solid index.$color-ui-secondary;
-    width: 100%;
+    width: 85%;
     background-color: index.$color-background-secondary;
     border-radius: 0.25rem;
 
@@ -35,11 +35,11 @@
   &__search-input {
     border-style: none;
     background-color: index.$color-background-secondary;
-    min-width: 15rem;
-    width: 100%;
+    font-family: "Avenir Next", Arial, Helvetica, sans-serif;
+    // min-width: 15rem;
+    width: 85%;
     height: 2.25rem;
     padding: 0.75rem;
-    margin-right: auto;
 
     &:focus {
       outline: none;
@@ -58,12 +58,13 @@
     object-fit: cover;
   }
 
-  &__link {
+  &__button {
     @include index.flexed();
     background-color: index.$color-cta-primary;
     border-radius: 0.25rem;
-    text-decoration: none;
+    border-style: none;
     height: 2.5rem;
+    width: 100%;
 
     &:hover {
       background-color: index.$color-cta-hover;
@@ -71,7 +72,7 @@
   }
 
   &__button-text {
-    @include index.text(index.$color-cta-text);
+    @include index.text(index.$color-cta-text, 0.75rem, 1.25rem, 700);
     width: 100%;
     margin: 0;
   }
@@ -111,6 +112,7 @@
 
     &__button-tablet {
       display: block;
+      min-width: 9.375rem;
     }
   }
 }

@@ -1,0 +1,170 @@
+@use "../../styles/partials/index" as index;
+
+.comments {
+  padding: 1rem 1rem 0;
+
+  &__container {
+    display: flex;
+    padding-bottom: 1rem;
+  }
+
+  &__avatar {
+    background-color: index.$color-ui-secondary;
+    border-radius: 50%;
+    width: 2.25rem;
+    height: 2.25rem;
+    object-fit: cover;
+    margin-top: 1.5rem;
+    margin-right: 1rem;
+
+    &--no-avatar {
+      margin-top: 0;
+    }
+  }
+
+  &__right {
+    width: 100%;
+  }
+
+  &__title {
+    display: block;
+    @include index.text(index.$color-text-secondary, 0.8125rem, 1.125rem);
+    padding-bottom: 0.25rem;
+  }
+
+  &__textarea {
+    display: block;
+    font-family: "Avenir Next", Arial, Helvetica, sans-serif;
+    background-color: index.$color-background-secondary;
+    border: 1px solid index.$color-ui-secondary;
+    border-radius: 4px;
+    height: 6rem;
+    padding: 0.75rem;
+    resize: none;
+    // min-width: 15rem;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+      border-color: index.$color-cta-primary;
+    }
+
+    &::placeholder {
+      color: index.$color-text-primary;
+      opacity: 1;
+    }
+  }
+
+  &__button {
+    @include index.flexed();
+    background-color: index.$color-cta-primary;
+    border-radius: 0.25rem;
+    border-style: none;
+    height: 2.5rem;
+    margin-top: 1rem;
+    width: 100%;
+
+    &:hover {
+      background-color: index.$color-cta-hover;
+    }
+  }
+
+  &__button-text {
+    @include index.text(index.$color-cta-text, 0.75rem, 1.25rem, 700);
+    width: 100%;
+    margin: 0;
+  }
+
+  // &__divider {
+  //   color: index.$color-ui-secondary;
+  //   size: 1px;
+  //   margin: 1rem 0;
+  // }
+
+  &__posts {
+    display: flex;
+    padding: 1rem 0;
+    border-top: 1px solid index.$color-ui-secondary;
+
+    &:last-child {
+      border-bottom: 1px solid index.$color-ui-secondary;
+    }
+  }
+
+  &__posts-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__name {
+    @include index.text(index.$color-text-primary, 0.8125rem, null, 700);
+    margin: 0;
+  }
+
+  &__date {
+    @include index.text(index.$color-text-secondary);
+    margin: 0;
+  }
+
+  &__text {
+    @include index.text(index.$color-text-primary);
+    margin: 0;
+    padding-top: 1rem;
+  }
+}
+
+/* styles for header on tablet device */
+@include index.medium {
+  .comments {
+    padding: 1.5rem 1.5rem 0;
+
+    &__container {
+      padding-bottom: 1.5rem;
+    }
+
+    &__avatar {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    &__title {
+      @include index.text(null, 0.875rem, 1.375rem);
+    }
+
+    &__textarea-button-container {
+      display: flex;
+      gap: 1rem;
+    }
+
+    &__textarea {
+      height: 2.5rem;
+      overflow: hidden;
+    }
+
+    &__button {
+      margin-top: 0;
+      min-width: 9.375rem;
+      width: 30%;
+    }
+
+    &__posts {
+      padding: 1.5rem 0;
+    }
+
+    &__name {
+      @include index.text(null, 0.875rem, 1.375rem, null);
+    }
+
+    &__date {
+      @include index.text(null, 0.875rem, 1.375rem, null);
+    }
+
+    &__text {
+      @include index.text(null, 0.875rem, 1.375rem, null);
+    }
+
+    &__divider {
+      margin: 1.5rem 0;
+    }
+  }
+}
