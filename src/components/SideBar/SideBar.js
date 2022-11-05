@@ -6,7 +6,7 @@ const SideBar = ({ videos, onClick }) => {
       <h2 className="sidebar__title">NEXT VIDEOS</h2>
 
       {videos.map((video) => (
-        <article className="sidebar__videos">
+        <article key={video.id} className="sidebar__videos">
           <img
             className="sidebar__image"
             key={video.id}

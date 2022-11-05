@@ -9,7 +9,7 @@ const VideoDetails = ({ video }) => {
   return (
     <section className="video-details">
       <h1 className="video-details__title">{title}</h1>
-      <hr className="video-details__divider video-details__divider--tablet" />
+      {/* <hr className="video-details__divider video-details__divider--tablet" /> */}
 
       <div className="video-details__container">
         <div className="video-details__left">
@@ -38,7 +38,7 @@ const VideoDetails = ({ video }) => {
         </div>
       </div>
 
-      <hr className="video-details__divider video-details__divider--top" />
+      {/* <hr className="video-details__divider video-details__divider--top" /> */}
 
       <p className="video-details__description">{description}</p>
 

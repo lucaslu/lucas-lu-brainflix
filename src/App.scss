@@ -13,3 +13,10 @@ body {
 *::after {
   box-sizing: inherit;
 }
+
+/* styles for header on desktop */
+@include index.large {
+  .app__container {
+    display: flex;
+  }
+}
