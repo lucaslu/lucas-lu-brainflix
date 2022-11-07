@@ -1,0 +1,116 @@
+@use "../../styles/partials/index" as index;
+
+.video-details {
+  padding: 0 1rem;
+
+  &__title {
+    @include index.text(index.$color-text-primary, 1.5rem, 2rem, 700);
+    margin: 0;
+    padding: 1.5rem 0 1rem;
+  }
+
+  &__container {
+    @include index.flexed(space-between);
+    border-top: 1px solid index.$color-ui-secondary;
+    border-bottom: 1px solid index.$color-ui-secondary;
+  }
+
+  &__left {
+    padding-bottom: 1rem;
+  }
+
+  &__right {
+    padding-bottom: 1rem;
+  }
+
+  &__text {
+    @include index.text(index.$color-text-secondary);
+    margin: 0;
+    padding-top: 1rem;
+    padding-right: 2rem;
+
+    &--header {
+      font-weight: 700;
+      color: index.$color-text-primary;
+    }
+  }
+
+  &__view-container {
+    @include index.flexed();
+  }
+
+  &__icons {
+    padding-top: 1rem;
+    padding-right: 0.5rem;
+  }
+
+  &__description {
+    @include index.text(index.$color-text-primary);
+    margin: 0;
+    padding: 1rem 0;
+  }
+
+  &__comments {
+    @include index.text(index.$color-text-primary, 0.8125rem, null, 700);
+    margin: 0;
+  }
+}
+
+/* styles for header on tablet device */
+@include index.medium {
+  .video-details {
+    padding: 0 1.5rem;
+
+    &__title {
+      @include index.text(null, 2.0625rem, 2.75rem, null);
+      padding: 2.25rem 0 1.5rem;
+    }
+
+    &__container {
+      border-top: none;
+    }
+
+    &__left {
+      display: flex;
+      padding-bottom: 1.5rem;
+    }
+
+    &__right {
+      display: flex;
+      padding-bottom: 1.5rem;
+    }
+
+    &__text {
+      @include index.text(null, 0.875rem, 1.375rem, null);
+      margin: 0;
+      padding: 0;
+      padding-right: 2rem;
+    }
+
+    &__icons {
+      padding-top: 0;
+      padding-right: 0.5rem;
+    }
+
+    &__description {
+      @include index.text(null, 0.875rem, 1.375rem, null);
+
+      padding: 1.5rem 0;
+    }
+
+    &__comments {
+      @include index.text(null, 0.875rem, 1.375rem, null);
+    }
+  }
+}
+
+/* styles for header on desktop */
+@include index.large {
+  .video-details {
+    padding-right: 0;
+
+    &__description {
+      padding-right: 1.5rem;
+    }
+  }
+}
