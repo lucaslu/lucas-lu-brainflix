@@ -9,24 +9,24 @@
     padding: 1.5rem 0 1rem;
   }
 
-  &__divider {
-    color: index.$color-ui-secondary;
-    size: 1px;
-    margin: 0;
-    &--top {
-      margin-top: 1rem;
-    }
-  }
-
   &__container {
     @include index.flexed(space-between);
+    border-top: 1px solid index.$color-ui-secondary;
+    border-bottom: 1px solid index.$color-ui-secondary;
+  }
+
+  &__left {
+    padding-bottom: 1rem;
+  }
+
+  &__right {
+    padding-bottom: 1rem;
   }
 
   &__text {
     @include index.text(index.$color-text-secondary);
     margin: 0;
     padding-top: 1rem;
-    // padding-left: 0.5rem;
     padding-right: 2rem;
 
     &--header {
@@ -66,25 +66,24 @@
       padding: 2.25rem 0 1.5rem;
     }
 
-    &__divider {
-      &--tablet {
-        display: none;
-      }
+    &__container {
+      border-top: none;
     }
 
     &__left {
       display: flex;
+      padding-bottom: 1.5rem;
     }
 
     &__right {
       display: flex;
+      padding-bottom: 1.5rem;
     }
 
     &__text {
       @include index.text(null, 0.875rem, 1.375rem, null);
       margin: 0;
       padding: 0;
-      // padding-top: 1rem;
       padding-right: 2rem;
     }
 
@@ -99,14 +98,19 @@
       padding: 1.5rem 0;
     }
 
-    &__divider {
-      &--top {
-        margin-top: 1.5rem;
-      }
-    }
-
     &__comments {
       @include index.text(null, 0.875rem, 1.375rem, null);
+    }
+  }
+}
+
+/* styles for header on desktop */
+@include index.large {
+  .video-details {
+    padding-right: 0;
+
+    &__description {
+      padding-right: 1.5rem;
     }
   }
 }

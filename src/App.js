@@ -21,17 +21,17 @@ const App = () => {
     setVideoDetails(getVideoDetails(videoIdClickedOn));
   };
 
-  // console.table("videos", videos);
-  // console.table("videoDetails", videoDetails);
   return (
     <>
       <Header />
-      <main>
-        <Video image={videoDetails.image} />
-        <VideoDetails video={videoDetails} />
-        <Comments comments={videoDetails.comments} />
-      </main>
-      <SideBar videos={videos} onClick={handleClick} />
+      <Video image={videoDetails.image} />
+      <section className="app__container">
+        <section className="app__container-left">
+          <VideoDetails video={videoDetails} />
+          <Comments comments={videoDetails.comments} />
+        </section>
+        <SideBar videos={videos} onClick={handleClick} />
+      </section>
     </>
   );
 };

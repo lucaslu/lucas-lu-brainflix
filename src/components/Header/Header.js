@@ -24,19 +24,19 @@ const Header = () => {
         </div>
 
         <div className="header__button-tablet">
-          <a className="header__link" href="#">
+          <button className="header__button">
             <img src={uploadIcon} alt="Upload" />
             <p className="header__button-text">UPLOAD</p>
-          </a>
+          </button>
         </div>
         <img className="header__avatar" src={avatar} alt="Mohan Muruge" />
       </div>
 
       <div className="header__button-mobile">
-        <a className="header__link" href="#">
+        <button className="header__button">
           <img src={uploadIcon} alt="Upload" />
           <p className="header__button-text">UPLOAD</p>
-        </a>
+        </button>
       </div>
     </header>
   );

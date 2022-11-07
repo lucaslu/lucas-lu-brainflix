@@ -1,13 +1,12 @@
 import "./Video.scss";
 
 import playIcon from "../../assets/icons/play.svg";
-
 import fullScreenIcon from "../../assets/icons/fullscreen.svg";
 import volumeUpIcon from "../../assets/icons/volume_up.svg";
 
 const Video = ({ image }) => {
   const poster = image || "https://i.imgur.com/l2Xfgpl.jpg";
-  console.log(poster);
+
   return (
     <section className="video">
       <div className="video__container">
