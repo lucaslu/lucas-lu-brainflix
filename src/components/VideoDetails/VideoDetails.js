@@ -1,15 +1,16 @@
+import { formatDistanceToNow } from "date-fns";
+import { enCA } from "date-fns/locale";
+
 import "./VideoDetails.scss";
 import viewsIcon from "../../assets/icons/views.svg";
 import likesIcon from "../../assets/icons/likes.svg";
 
-const VideoDetails = ({ video }) => {
-  const { title, channel, description, views, likes, timestamp, comments } =
-    video;
-
+const VideoDetails = ({
+  video: { title, channel, description, views, likes, timestamp, comments },
+}) => {
   return (
     <section className="video-details">
       <h1 className="video-details__title">{title}</h1>
-      {/* <hr className="video-details__divider video-details__divider--tablet" /> */}
 
       <div className="video-details__container">
         <div className="video-details__left">
@@ -17,11 +18,14 @@ const VideoDetails = ({ video }) => {
             By {channel}
           </p>
           <p className="video-details__text">
-            {new Date(timestamp).toLocaleString("en-US", {
+            {/* {new Date(timestamp).toLocaleString("en-US", {
               timezone: "America/New_York",
               day: "2-digit",
               month: "2-digit",
               year: "numeric",
+            })} */}
+            {formatDistanceToNow(new Date(timestamp), {
+              locale: enCA,
             })}
           </p>
         </div>
@@ -37,8 +41,6 @@ const VideoDetails = ({ video }) => {
           </div>
         </div>
       </div>
-
-      {/* <hr className="video-details__divider video-details__divider--top" /> */}
 
       <p className="video-details__description">{description}</p>
 

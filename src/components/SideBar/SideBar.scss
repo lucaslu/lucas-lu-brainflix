@@ -65,5 +65,9 @@
 @include index.large {
   .sidebar {
     border-left: 1px solid index.$color-ui-secondary;
+
+    &__container {
+      width: 100%;
+    }
   }
 }

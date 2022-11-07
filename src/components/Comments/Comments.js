@@ -1,3 +1,6 @@
+import { formatDistanceToNow } from "date-fns";
+import { enCA } from "date-fns/locale";
+
 import "./Comments.scss";
 import mohanImg from "../../assets/images/mohan-muruge.jpg";
 import addCommentIcon from "../../assets/icons/add_comment.svg";
@@ -28,26 +31,28 @@ const Comments = ({ comments }) => {
           </form>
         </div>
       </div>
-      {/* <hr className="comments__divider" /> */}
 
-      {comments.map((comment) => (
-        <article key={comment.id} className="comments__posts">
+      {comments.map(({ id, name, comment, timestamp }) => (
+        <article key={id} className="comments__posts">
           <div className="comments__left">
             <div className="comments__avatar comments__avatar--no-avatar"></div>
           </div>
           <div className="comments__right">
             <div className="comments__posts-container">
-              <p className="comments__name">{comment.name}</p>
+              <p className="comments__name">{name}</p>
               <p className="comments__date">
-                {new Date(comment.timestamp).toLocaleString("en-US", {
+                {/* {new Date(timestamp).toLocaleString("en-US", {
                   timezone: "America/New_York",
                   day: "2-digit",
                   month: "2-digit",
                   year: "numeric",
+                })} */}
+                {formatDistanceToNow(new Date(timestamp), {
+                  locale: enCA,
                 })}
               </p>
             </div>
-            <p className="comments__text">{comment.comment}</p>
+            <p className="comments__text">{comment}</p>
           </div>
         </article>
       ))}
