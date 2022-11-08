@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import "./Header.scss";
 import logo from "../../assets/logos/brainflix-logo.svg";
 import searchIcon from "../../assets/icons/search.svg";
@@ -8,9 +10,9 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header__logo">
-        <a href="../../public/index.html">
+        <Link to="/">
           <img src={logo} alt="Logo" />
-        </a>
+        </Link>
       </div>
 
       <div className="header__search">

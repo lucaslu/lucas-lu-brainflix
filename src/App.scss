@@ -13,18 +13,3 @@ body {
 *::after {
   box-sizing: inherit;
 }
-
-/* styles for header on desktop */
-@include index.large {
-  .app {
-    &__container {
-      display: flex;
-      max-width: 80rem;
-      margin: 0 auto;
-    }
-
-    &__container-left {
-      width: 80%;
-    }
-  }
-}

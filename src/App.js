@@ -1,12 +1,10 @@
 import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { getVideos, getVideoDetails } from "./utils/utils";
 import "./App.scss";
 
 import Header from "./components/Header/Header";
-import SideBar from "./components/SideBar/SideBar";
-import VideoDetails from "./components/VideoDetails/VideoDetails";
-import Comments from "./components/Comments/Comments";
-import Video from "./components/Video/Video";
+import HomePage from "./pages/Home-page/HomePage";
 
 const App = () => {
   const [videoId, setVideoId] = useState(
@@ -16,23 +14,28 @@ const App = () => {
   const [videoDetails, setVideoDetails] = useState(getVideoDetails(videoId));
 
   const handleClick = (clickEvnt, videoIdClickedOn) => {
+    clickEvnt.preventDefault();
     setVideoId(videoIdClickedOn);
     setVideos(getVideos(videoIdClickedOn));
     setVideoDetails(getVideoDetails(videoIdClickedOn));
   };
 
   return (
-    <>
+    <BrowserRouter>
       <Header />
-      <Video image={videoDetails.image} />
-      <section className="app__container">
-        <section className="app__container-left">
-          <VideoDetails video={videoDetails} />
-          <Comments comments={videoDetails.comments} />
-        </section>
-        <SideBar videos={videos} onClick={handleClick} />
-      </section>
-    </>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <HomePage
+              video={videoDetails}
+              videos={videos}
+              onClick={handleClick}
+            />
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
