@@ -119,7 +119,7 @@
     }
 
     &__publish-container {
-      @include index.flexed(flex-start);
+      @include index.flexed(flex-start, center);
       flex-direction: row-reverse;
       border-top: 1px solid index.$color-ui-secondary;
       padding-top: 1.5rem;
@@ -132,6 +132,31 @@
     &__cancel {
       @include index.text(index.$color-cta-primary, 0.875rem, 1.375rem, null);
       padding-right: 1.5rem;
+    }
+  }
+}
+
+/* styles for header on desktop */
+@include index.large {
+  .upload {
+    max-width: 80rem;
+    margin: 0 auto;
+
+    &__video-description {
+      height: 6.5rem;
+    }
+
+    &__cancel {
+      padding-right: 5rem;
+    }
+
+    &__container {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    &__right {
+      width: 100%;
     }
   }
 }

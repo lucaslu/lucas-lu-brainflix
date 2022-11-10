@@ -7,30 +7,36 @@ const Upload = () => {
   return (
     <section className="upload">
       <h1 className="upload__title">Upload Video</h1>
-      <p className="upload__label">VIDEO THUMBNAIL</p>
-      <img
-        className="upload__video-preview"
-        src={videoPreview}
-        alt="Video Preview"
-      />
       <form>
-        <label className="upload__label" htmlFor="video-name">
-          TITLE YOUR VIDEO
-        </label>
-        <input
-          className="upload__video-name"
-          type="text"
-          name="video-name"
-          placeholder="Add a title to your video"
-        />
-        <label className="upload__label" htmlFor="video-description">
-          ADD A VIDEO DESCRIPTION
-        </label>
-        <textarea
-          className="upload__video-description"
-          name="video-description"
-          placeholder="Add a description to your video"
-        ></textarea>
+        <div className="upload__container">
+          <div className="upload__left">
+            <p className="upload__label">VIDEO THUMBNAIL</p>
+            <img
+              className="upload__video-preview"
+              src={videoPreview}
+              alt="Video Preview"
+            />
+          </div>
+          <div className="upload__right">
+            <label className="upload__label" htmlFor="video-name">
+              TITLE YOUR VIDEO
+            </label>
+            <input
+              className="upload__video-name"
+              type="text"
+              name="video-name"
+              placeholder="Add a title to your video"
+            />
+            <label className="upload__label" htmlFor="video-description">
+              ADD A VIDEO DESCRIPTION
+            </label>
+            <textarea
+              className="upload__video-description"
+              name="video-description"
+              placeholder="Add a description to your video"
+            ></textarea>
+          </div>
+        </div>
 
         <div className="upload__publish-container">
           <button className="upload__publish" type="submit">
