@@ -23,11 +23,9 @@ const HomePage = ({ video, videos, searchVideoById }) => {
       <section className="home-page__container">
         <section className="home-page__container-left">
           {Object.keys(video).length > 0 && <VideoDetails video={video} />}
-          {Object.keys(video).length > 0 && (
-            <Comments comments={video.comments} />
-          )}
+          {video.comments.length > 0 && <Comments comments={video.comments} />}
         </section>
-        {Object.keys(videos).length > 0 && <SideBar videos={videos} />}
+        {videos.length > 0 && <SideBar videos={videos} />}
       </section>
     </>
   );

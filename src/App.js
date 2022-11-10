@@ -6,6 +6,7 @@ import "./App.scss";
 
 import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
+import VideoUpload from "./pages/VideoUpload/VideoUpload";
 
 const URL = `https://project-2-api.herokuapp.com/videos?api_key=${process.env.REACT_APP_BRAINFLIX_API_KEY}`;
 const searchByVideoId = (videoId) =>
@@ -88,7 +89,7 @@ const App = () => {
           path="/"
           element={<HomePage video={videoDetails} videos={videos} />}
         />
-
+        <Route path="upload" element={<VideoUpload />} />
         <Route
           path="video/:videoId"
           element={

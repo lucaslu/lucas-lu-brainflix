@@ -26,19 +26,23 @@ const Header = () => {
         </div>
 
         <div className="header__button-tablet">
-          <button className="header__button">
-            <img src={uploadIcon} alt="Upload" />
-            <p className="header__button-text">UPLOAD</p>
-          </button>
+          <Link to="upload">
+            <button className="header__button">
+              <img src={uploadIcon} alt="Upload" />
+              <p className="header__button-text">UPLOAD</p>
+            </button>
+          </Link>
         </div>
         <img className="header__avatar" src={avatar} alt="Mohan Muruge" />
       </div>
 
       <div className="header__button-mobile">
-        <button className="header__button">
-          <img src={uploadIcon} alt="Upload" />
-          <p className="header__button-text">UPLOAD</p>
-        </button>
+        <Link to="upload">
+          <button className="header__button">
+            <img src={uploadIcon} alt="Upload" />
+            <p className="header__button-text">UPLOAD</p>
+          </button>
+        </Link>
       </div>
     </header>
   );

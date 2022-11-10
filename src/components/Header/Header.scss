@@ -76,8 +76,17 @@
     margin: 0;
   }
 
+  &__button-mobile {
+    a {
+      text-decoration: none;
+    }
+  }
+
   &__button-tablet {
     display: none;
+    a {
+      text-decoration: none;
+    }
   }
 }
 
