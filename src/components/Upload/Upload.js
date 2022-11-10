@@ -31,13 +31,16 @@ const Upload = () => {
           name="video-description"
           placeholder="Add a description to your video"
         ></textarea>
-        <button className="upload__publish" type="submit">
-          <img src={publishIcon} alt="Publish" />
-          <p className="upload__publish-text">PUBLISH</p>
-        </button>
-        <a className="upload__cancel" href="#">
-          CANCEL
-        </a>
+
+        <div className="upload__publish-container">
+          <button className="upload__publish" type="submit">
+            <img src={publishIcon} alt="Publish" />
+            <p className="upload__publish-text">PUBLISH</p>
+          </button>
+          <a className="upload__cancel" href="#">
+            CANCEL
+          </a>
+        </div>
       </form>
     </section>
   );
