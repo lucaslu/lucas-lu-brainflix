@@ -19,13 +19,13 @@ const HomePage = ({ video, videos, searchVideoById }) => {
 
   return (
     <>
-      {Object.keys(video).length > 0 && <Video image={video.image} />}
+      {video && <Video image={video.image} />}
       <section className="home-page__container">
         <section className="home-page__container-left">
-          {Object.keys(video).length > 0 && <VideoDetails video={video} />}
-          {video.comments.length > 0 && <Comments comments={video.comments} />}
+          {video && <VideoDetails video={video} />}
+          {video.comments && <Comments comments={video.comments} />}
         </section>
-        {videos.length > 0 && <SideBar videos={videos} />}
+        {videos && <SideBar videos={videos} />}
       </section>
     </>
   );

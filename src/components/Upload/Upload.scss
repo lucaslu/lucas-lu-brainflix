@@ -42,6 +42,10 @@
       border: 2px solid index.$color-cta-primary;
     }
 
+    &--required {
+      border: 1px solid index.$color-error-state;
+    }
+
     &::placeholder {
       color: index.$color-text-primary;
       opacity: 1;
@@ -52,6 +56,10 @@
     @extend .upload__video-name;
     height: 6rem;
     resize: none;
+
+    &--required {
+      border: 1px solid index.$color-error-state;
+    }
   }
 
   &__publish {
@@ -80,6 +88,14 @@
     text-align: center;
     text-decoration: none;
     padding-top: 1rem;
+  }
+
+  &__toast {
+    @include index.text(index.$color-cta-text, 0.8125rem, 1.25rem, 400);
+    background-color: index.$color-cta-primary;
+    padding: 1rem 0;
+    height: 2.5rem;
+    text-align: center;
   }
 }
 
