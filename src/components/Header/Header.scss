@@ -72,6 +72,7 @@
 
   &__button-text {
     @include index.text(index.$color-cta-text, 0.75rem, 1.25rem, 700);
+    font-family: "Avenir Next", Arial, Helvetica, sans-serif;
     width: 100%;
     margin: 0;
   }
@@ -94,7 +95,7 @@
 @include index.medium {
   .header {
     @include index.flexed();
-    padding: 1.5rem;
+    padding: 1.5rem 5rem;
 
     &__logo {
       padding-bottom: 0;

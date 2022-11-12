@@ -78,12 +78,14 @@
 
   &__publish-text {
     @include index.text(index.$color-cta-text, 0.75rem, 1.25rem, 700);
+    font-family: "Avenir Next", Arial, Helvetica, sans-serif;
     width: 100%;
     margin: 0;
   }
 
   &__cancel {
     @include index.text(index.$color-cta-primary, 0.8125rem, 1.125rem, 700);
+    font-family: "Avenir Next", Arial, Helvetica, sans-serif;
     display: block;
     text-align: center;
     text-decoration: none;

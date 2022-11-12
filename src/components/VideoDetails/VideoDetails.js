@@ -18,15 +18,16 @@ const VideoDetails = ({
             By {channel}
           </p>
           <p className="video-details__text">
-            {new Date(timestamp).toLocaleString("en-US", {
+            {/* {new Date(timestamp).toLocaleString("en-US", {
               timezone: "America/New_York",
               day: "2-digit",
               month: "2-digit",
               year: "numeric",
-            })}
-            {/* {formatDistanceToNow(new Date(timestamp), {
-              locale: enCA,
             })} */}
+            {timestamp &&
+              formatDistanceToNow(new Date(timestamp), {
+                locale: enCA,
+              })}
           </p>
         </div>
 
@@ -46,9 +47,7 @@ const VideoDetails = ({
         <p className="video-details__description">{description}</p>
       )}
 
-      {comments && (
-        <p className="video-details__comments">{comments.length} Comments</p>
-      )}
+      <p className="video-details__comments">{comments?.length} Comments</p>
     </section>
   );
 };
