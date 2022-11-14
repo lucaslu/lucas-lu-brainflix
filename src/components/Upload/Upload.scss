@@ -1,0 +1,182 @@
+@use "../../styles/partials/index";
+
+/* styles for header for mobile */
+.upload {
+  padding: 0 1rem;
+  border-top: 1px solid index.$color-ui-secondary;
+
+  &__title {
+    @include index.text(index.$color-text-primary, 1.5rem, 2rem, 700);
+    margin: 0;
+    padding: 0.5rem 0 1rem;
+  }
+
+  &__label {
+    @include index.text(index.$color-text-secondary, 0.8125rem, 1.125rem, 700);
+    margin: 0;
+    padding-bottom: 0.25rem;
+    display: block;
+  }
+
+  &__video-preview {
+    border-radius: 4px;
+    background-color: index.$color-ui-secondary;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  &__video-name {
+    @include index.text(index.$color-text-primary);
+    font-family: "Avenir Next", Arial, Helvetica, sans-serif;
+    background-color: index.$color-background-secondary;
+    border: 1px solid index.$color-ui-secondary;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    min-height: 2.25rem;
+    min-width: 15rem;
+    padding: 0.75rem;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+      border: 2px solid index.$color-cta-primary;
+    }
+
+    &--required {
+      border: 1px solid index.$color-error-state;
+    }
+
+    &::placeholder {
+      color: index.$color-text-primary;
+      opacity: 1;
+    }
+  }
+
+  &__video-description {
+    @extend .upload__video-name;
+    height: 6rem;
+    resize: none;
+
+    &--required {
+      border: 1px solid index.$color-error-state;
+    }
+  }
+
+  &__publish {
+    @include index.flexed();
+    background-color: index.$color-cta-primary;
+    border-radius: 0.25rem;
+    border-style: none;
+    height: 2.5rem;
+
+    width: 100%;
+
+    &:hover {
+      background-color: index.$color-cta-hover;
+    }
+  }
+
+  &__publish-text {
+    @include index.text(index.$color-cta-text, 0.75rem, 1.25rem, 700);
+    font-family: "Avenir Next", Arial, Helvetica, sans-serif;
+    width: 100%;
+    margin: 0;
+  }
+
+  &__cancel {
+    @include index.text(index.$color-cta-primary, 0.8125rem, 1.125rem, 700);
+    font-family: "Avenir Next", Arial, Helvetica, sans-serif;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding-top: 1rem;
+  }
+
+  &__toast {
+    @include index.text(index.$color-cta-text, 0.8125rem, 1.25rem, 400);
+    background-color: index.$color-cta-primary;
+    padding: 1rem 0;
+    height: 2.5rem;
+    text-align: center;
+  }
+}
+
+/* styles for header on tablet device */
+@include index.medium {
+  .upload {
+    padding: 0 1.5rem;
+
+    &__title {
+      @include index.text(null, 2.0625rem, 2.75rem, null);
+      padding: 2.25rem 0 1.5rem;
+      border-bottom: 1px solid index.$color-ui-secondary;
+    }
+
+    &__label {
+      @include index.text(null, 0.875rem, 1.375rem, null);
+      padding-top: 1.5rem;
+    }
+
+    &__video-preview {
+      width: 25rem;
+      margin: 0;
+    }
+
+    &__video-name {
+      @include index.text(null, 0.875rem, 1.375rem, null);
+      margin-bottom: 0;
+      min-height: 2.5rem;
+      padding: 1rem;
+    }
+
+    &__video-description {
+      @include index.text(null, 0.875rem, 1.375rem, null);
+      min-height: 2.5rem;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    &__publish-container {
+      @include index.flexed(flex-start, center);
+      flex-direction: row-reverse;
+      border-top: 1px solid index.$color-ui-secondary;
+      padding-top: 1.5rem;
+    }
+
+    &__publish {
+      width: 9.375rem;
+    }
+
+    &__cancel {
+      @include index.text(index.$color-cta-primary, 0.875rem, 1.375rem, null);
+      padding-right: 1.5rem;
+      padding-top: 0;
+    }
+  }
+}
+
+/* styles for header on desktop */
+@include index.large {
+  .upload {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 5rem;
+
+    &__video-description {
+      height: 6.5rem;
+    }
+
+    &__cancel {
+      padding-right: 5rem;
+    }
+
+    &__container {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    &__right {
+      width: 100%;
+    }
+  }
+}

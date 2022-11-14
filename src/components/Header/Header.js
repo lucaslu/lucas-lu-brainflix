@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import "./Header.scss";
 import logo from "../../assets/logos/brainflix-logo.svg";
 import searchIcon from "../../assets/icons/search.svg";
@@ -8,9 +10,9 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header__logo">
-        <a href="../../public/index.html">
+        <Link to="/">
           <img src={logo} alt="Logo" />
-        </a>
+        </Link>
       </div>
 
       <div className="header__search">
@@ -24,19 +26,23 @@ const Header = () => {
         </div>
 
         <div className="header__button-tablet">
-          <button className="header__button">
-            <img src={uploadIcon} alt="Upload" />
-            <p className="header__button-text">UPLOAD</p>
-          </button>
+          <Link to="upload">
+            <button className="header__button">
+              <img src={uploadIcon} alt="Upload" />
+              <p className="header__button-text">UPLOAD</p>
+            </button>
+          </Link>
         </div>
         <img className="header__avatar" src={avatar} alt="Mohan Muruge" />
       </div>
 
       <div className="header__button-mobile">
-        <button className="header__button">
-          <img src={uploadIcon} alt="Upload" />
-          <p className="header__button-text">UPLOAD</p>
-        </button>
+        <Link to="upload">
+          <button className="header__button">
+            <img src={uploadIcon} alt="Upload" />
+            <p className="header__button-text">UPLOAD</p>
+          </button>
+        </Link>
       </div>
     </header>
   );

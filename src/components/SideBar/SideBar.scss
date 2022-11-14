@@ -65,6 +65,7 @@
 @include index.large {
   .sidebar {
     border-left: 1px solid index.$color-ui-secondary;
+    padding-right: 5rem;
 
     &__container {
       width: 100%;
