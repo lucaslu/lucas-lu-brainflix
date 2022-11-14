@@ -8,7 +8,6 @@ import "./Comments.scss";
 import mohanImg from "../../assets/images/mohan-muruge.jpg";
 import addCommentIcon from "../../assets/icons/add_comment.svg";
 import deleteIcon from "../../assets/icons/delete.svg";
-import { render } from "@testing-library/react";
 
 const Comments = ({ videoId, render, comments }) => {
   const [comment, setComment] = useState("");
@@ -28,12 +27,12 @@ const Comments = ({ videoId, render, comments }) => {
 
     const commentObj = {
       name: "Nigel",
-      comment: comment,
+      comment,
     };
 
     axios
       .post(`${API_URL}/${videoId}/comments${API_KEY}`, commentObj)
-      .then((response) => {
+      .then(() => {
         setComment("");
         render();
       })
@@ -43,8 +42,7 @@ const Comments = ({ videoId, render, comments }) => {
   const deleteComment = ({ id }) => {
     axios
       .delete(`${API_URL}/${videoId}/comments/${id}${API_KEY}`)
-      .then((response) => {
-        console.log(response);
+      .then(() => {
         render();
       })
       .catch((error) => console.log(error));

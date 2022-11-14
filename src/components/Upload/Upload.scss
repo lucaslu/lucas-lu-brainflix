@@ -150,6 +150,7 @@
     &__cancel {
       @include index.text(index.$color-cta-primary, 0.875rem, 1.375rem, null);
       padding-right: 1.5rem;
+      padding-top: 0;
     }
   }
 }
@@ -159,6 +160,7 @@
   .upload {
     max-width: 80rem;
     margin: 0 auto;
+    padding: 0 5rem;
 
     &__video-description {
       height: 6.5rem;

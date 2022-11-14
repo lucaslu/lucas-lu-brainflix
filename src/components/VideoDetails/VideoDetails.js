@@ -18,12 +18,6 @@ const VideoDetails = ({
             By {channel}
           </p>
           <p className="video-details__text">
-            {/* {new Date(timestamp).toLocaleString("en-US", {
-              timezone: "America/New_York",
-              day: "2-digit",
-              month: "2-digit",
-              year: "numeric",
-            })} */}
             {timestamp &&
               formatDistanceToNow(new Date(timestamp), {
                 locale: enCA,

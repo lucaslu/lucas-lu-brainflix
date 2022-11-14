@@ -14,7 +14,6 @@ const HomePage = () => {
   const [videoDetail, setVideoDetail] = useState({});
 
   const defaultVideoId = videos.length > 0 ? videos[0].id : null;
-  // videos[0]?.id
   const { videoId } = useParams();
   let videoToDisplay = videoId || defaultVideoId;
 
@@ -23,20 +22,15 @@ const HomePage = () => {
   }, []);
 
   const getVideoDetail = () => {
-    if (videoToDisplay) {
+    videoToDisplay &&
       axios
         .get(`${API_URL}/${videoToDisplay}${API_KEY}`)
         .then((response) => setVideoDetail(response.data));
-    }
   };
 
   useEffect(() => {
-    // if (videoToDisplay) {
-    //   axios
-    //     .get(`${API_URL}/${videoToDisplay}${API_KEY}`)
-    //     .then((response) => setVideoDetail(response.data));
-    // }
     getVideoDetail();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [videoToDisplay]);
 
   const filteredVideos = videos.filter((video) => video.id !== videoToDisplay);
