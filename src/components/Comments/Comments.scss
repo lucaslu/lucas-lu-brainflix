@@ -45,7 +45,11 @@
 
     &:focus {
       outline: none;
-      border-color: index.$color-cta-primary;
+      border: 2px solid index.$color-cta-primary;
+    }
+
+    &:required {
+      border: 1px solid index.$color-error-state;
     }
 
     &::placeholder {
@@ -70,6 +74,7 @@
 
   &__button-text {
     @include index.text(index.$color-cta-text, 0.75rem, 1.25rem, 700);
+    font-family: "Avenir Next", Arial, Helvetica, sans-serif;
     width: 100%;
     margin: 0;
   }
@@ -103,6 +108,13 @@
     @include index.text(index.$color-text-primary);
     margin: 0;
     padding-top: 1rem;
+  }
+
+  &__delete {
+    padding-top: 1rem;
+    padding-left: 0.5rem;
+    width: 30px;
+    cursor: pointer;
   }
 }
 
@@ -163,6 +175,7 @@
 @include index.large {
   .comments {
     padding-right: 0;
+    padding-left: 5rem;
 
     &__container {
       padding-right: 1.5rem;
