@@ -1,18 +1,21 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import Toastify from "toastify-js";
+import { API_URL } from "../../utils/api";
+
 import "./Upload.scss";
 import publishIcon from "../../assets/icons/publish.svg";
 import videoPreview from "../../assets/images/upload-video-preview.jpg";
 
 const Upload = () => {
-  const [name, setName] = useState("");
+  const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const navigate = useNavigate();
 
   const isFormValid = () => {
-    if (!name || !description) return false;
+    if (!title || !description) return false;
 
     return true;
   };
@@ -20,6 +23,13 @@ const Upload = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (isFormValid()) {
+      const newUpload = {
+        title,
+        description,
+        image: `image${Math.floor(Math.random() * 9)}.jpeg`,
+      };
+      axios.post(API_URL, newUpload);
+
       Toastify({
         text: "Video Uploaded!",
         duration: 1500,
@@ -47,16 +57,16 @@ const Upload = () => {
             />
           </div>
           <div className="upload__right">
-            <label className="upload__label" htmlFor="name">
+            <label className="upload__label" htmlFor="title">
               TITLE YOUR VIDEO
             </label>
             <input
               className="upload__video-name"
               type="text"
-              name="name"
+              name="title"
               placeholder="Add a title to your video"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
             />
             <label className="upload__label" htmlFor="description">
               ADD A VIDEO DESCRIPTION

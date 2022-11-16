@@ -18,13 +18,15 @@ const HomePage = () => {
   let videoToDisplay = videoId || defaultVideoId;
 
   useEffect(() => {
-    axios.get(API_URL + API_KEY).then((response) => setVideos(response.data));
+    // axios.get(API_URL + API_KEY).then((response) => setVideos(response.data));
+    axios.get(API_URL).then((response) => setVideos(response.data));
   }, []);
 
   const getVideoDetail = () => {
     videoToDisplay &&
       axios
-        .get(`${API_URL}/${videoToDisplay}${API_KEY}`)
+        // .get(`${API_URL}/${videoToDisplay}${API_KEY}`)
+        .get(`${API_URL}/${videoToDisplay}`)
         .then((response) => setVideoDetail(response.data));
   };
 
