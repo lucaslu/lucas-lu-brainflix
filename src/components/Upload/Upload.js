@@ -1,8 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import Toastify from "toastify-js";
 import { API_URL } from "../../utils/api";
 
 import "./Upload.scss";
@@ -30,16 +29,12 @@ const Upload = () => {
       };
       axios.post(API_URL, newUpload);
 
-      Toastify({
-        text: "Video Uploaded!",
-        duration: 1500,
-        className: "upload__toast",
-      }).showToast();
+      alert("Video Uploaded");
       setTimeout(() => {
         navigate("/");
       }, 2500);
     } else {
-      console.log("Failed");
+      alert("Please fill all the fields");
     }
   };
 
@@ -86,9 +81,10 @@ const Upload = () => {
             <img src={publishIcon} alt="Publish" />
             <p className="upload__publish-text">PUBLISH</p>
           </button>
-          <a className="upload__cancel" href="#">
+
+          <Link className="upload__cancel" to="/">
             CANCEL
-          </a>
+          </Link>
         </div>
       </form>
     </section>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { formatDistanceToNow } from "date-fns";
 import { enCA } from "date-fns/locale";
-import { API_URL, API_KEY } from "../../utils/api";
+// import { API_URL, API_KEY } from "../../utils/api";
 import "./Comments.scss";
 
 import mohanImg from "../../assets/images/mohan-muruge.jpg";
@@ -14,6 +14,8 @@ const Comments = ({ videoId, render, comments }) => {
   const [isCommentValid, setIsCommentValid] = useState(true);
 
   const orderedComments = comments.sort((a, b) => b.timestamp - a.timestamp);
+
+  const API_URL = process.env.REACT_APP_BACKEND;
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -31,7 +33,8 @@ const Comments = ({ videoId, render, comments }) => {
     };
 
     axios
-      .post(`${API_URL}/${videoId}/comments${API_KEY}`, commentObj)
+      // .post(`${API_URL}/${videoId}/comments${API_KEY}`, commentObj)
+      .post(`${API_URL}/${videoId}/comments`, commentObj)
       .then(() => {
         setComment("");
         render();
@@ -41,7 +44,8 @@ const Comments = ({ videoId, render, comments }) => {
 
   const deleteComment = ({ id }) => {
     axios
-      .delete(`${API_URL}/${videoId}/comments/${id}${API_KEY}`)
+      // .delete(`${API_URL}/${videoId}/comments/${id}${API_KEY}`)
+      .delete(`${API_URL}/${videoId}/comments/${id}`)
       .then(() => {
         render();
       })
