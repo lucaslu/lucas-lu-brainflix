@@ -1,18 +1,21 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Toastify from "toastify-js";
+import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
+
 import "./Upload.scss";
 import publishIcon from "../../assets/icons/publish.svg";
 import videoPreview from "../../assets/images/upload-video-preview.jpg";
 
 const Upload = () => {
-  const [name, setName] = useState("");
+  const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const navigate = useNavigate();
 
+  const API_URL = process.env.REACT_APP_BACKEND;
+
   const isFormValid = () => {
-    if (!name || !description) return false;
+    if (!title || !description) return false;
 
     return true;
   };
@@ -20,16 +23,19 @@ const Upload = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (isFormValid()) {
-      Toastify({
-        text: "Video Uploaded!",
-        duration: 1500,
-        className: "upload__toast",
-      }).showToast();
+      const newUpload = {
+        title,
+        description,
+        image: `image${Math.floor(Math.random() * 9)}.jpeg`,
+      };
+      axios.post(API_URL, newUpload);
+
+      alert("Video Uploaded");
       setTimeout(() => {
         navigate("/");
       }, 2500);
     } else {
-      console.log("Failed");
+      alert("Please fill all the fields");
     }
   };
 
@@ -47,16 +53,16 @@ const Upload = () => {
             />
           </div>
           <div className="upload__right">
-            <label className="upload__label" htmlFor="name">
+            <label className="upload__label" htmlFor="title">
               TITLE YOUR VIDEO
             </label>
             <input
               className="upload__video-name"
               type="text"
-              name="name"
+              name="title"
               placeholder="Add a title to your video"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
             />
             <label className="upload__label" htmlFor="description">
               ADD A VIDEO DESCRIPTION
@@ -76,9 +82,10 @@ const Upload = () => {
             <img src={publishIcon} alt="Publish" />
             <p className="upload__publish-text">PUBLISH</p>
           </button>
-          <a className="upload__cancel" href="#">
+
+          <Link className="upload__cancel" to="/">
             CANCEL
-          </a>
+          </Link>
         </div>
       </form>
     </section>
