@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import { API_URL } from "../../utils/api";
 
 import "./Upload.scss";
 import publishIcon from "../../assets/icons/publish.svg";
@@ -12,6 +11,8 @@ const Upload = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const navigate = useNavigate();
+
+  const API_URL = process.env.REACT_APP_BACKEND;
 
   const isFormValid = () => {
     if (!title || !description) return false;

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-// import { API_URL, API_KEY } from "../../utils/api";
 
 import "./HomePage.scss";
 import SideBar from "../../components/SideBar/SideBar";
@@ -20,7 +19,6 @@ const HomePage = () => {
   const API_URL = process.env.REACT_APP_BACKEND;
 
   useEffect(() => {
-    // axios.get(API_URL + API_KEY).then((response) => setVideos(response.data));
     axios.get(API_URL).then((response) => setVideos(response.data));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -28,7 +26,6 @@ const HomePage = () => {
   const getVideoDetail = () => {
     videoToDisplay &&
       axios
-        // .get(`${API_URL}/${videoToDisplay}${API_KEY}`)
         .get(`${API_URL}/${videoToDisplay}`)
         .then((response) => setVideoDetail(response.data));
   };
